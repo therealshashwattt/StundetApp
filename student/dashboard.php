@@ -67,15 +67,17 @@ $attendance_percent = student_attendance_percentage($session_id, $class_id, $stu
 
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
 
+<div class="mx-auto w-full max-w-md">
+
 <div class="px-6 pt-12 pb-6 bg-white dark:bg-card-dark rounded-b-[2.5rem] shadow-sm">
-    <div class="flex items-center justify-between mb-6">
-        <div class="flex items-center gap-3">
+    <div class="flex items-center justify-between mb-6 gap-4">
+        <div class="flex items-center gap-3 min-w-0">
             <div class="p-2 bg-blue-900 rounded-xl">
                 <span class="material-icons-round text-white text-xl">school</span>
             </div>
-            <div>
-                <h1 class="text-sm font-bold text-blue-900 dark:text-blue-400 leading-tight uppercase"><?= $school_name ?></h1>
-                <p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Prayagraj, Uttar Pradesh</p>
+            <div class="min-w-0">
+                <h1 class="text-sm font-bold text-blue-900 dark:text-blue-400 leading-tight uppercase truncate"><?= htmlspecialchars($school_name ?? '') ?></h1>
+                <p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">Prayagraj, Uttar Pradesh</p>
             </div>
         </div>
         <button onclick="window.location='notification.php'"  class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
@@ -212,7 +214,9 @@ if ($latest):
 </main>
 
 
-<nav class="fixed bottom-6 left-6 right-6 safe-bottom">
+</div>
+
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-3rem)] max-w-md safe-bottom">
     <div class="bg-primary shadow-2xl shadow-primary/30 rounded-[2rem] px-6 py-4 flex justify-between items-center text-white">
         <button onclick="window.location='dashboard.php'" class="flex flex-col items-center gap-1">
             <span class="material-icons-round text-2xl">account_circle</span>
@@ -221,7 +225,7 @@ if ($latest):
         <button onclick="window.location='../auth/switch_student.php'" class="flex flex-col items-center gap-1 opacity-70">
             <span class="material-icons-round text-2xl">swap_horiz</span>
             <span class="text-[10px] font-bold uppercase tracking-tight">Switch</span>
-        </a>
+        </button>
         <button onclick="window.location='social.php'" class="flex flex-col items-center gap-1 opacity-70">
             <span class="material-icons-round text-2xl">grid_view</span>
             <span class="text-[10px] font-bold uppercase tracking-tight">Social</span>

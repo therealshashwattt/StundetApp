@@ -8,7 +8,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 include __DIR__ . "/dbs.php";
 
 if (!isset($_SESSION['school_db'])) {
-    header("Location: /StudentAppDatalaysSoftware/auth/login.php");
+    header("Location: login.php");
     exit;
 }
 

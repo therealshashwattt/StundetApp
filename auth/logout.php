@@ -6,5 +6,5 @@ session_unset();
 session_destroy();
 
 // सीधे login पर भेजो
-header("Location: /StudentAppDatalaysSoftware/auth/login.php");
+header("Location: login.php");
 exit;

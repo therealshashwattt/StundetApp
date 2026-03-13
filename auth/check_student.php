@@ -21,7 +21,8 @@ $BASE = '';
 foreach ($dbs as $d) {
     if ($d['db'] === $school) {
         $found = $d;
-                // Root path
+
+        // Root path
         $ROOT = rtrim($d['root'] ?? '', '/');
 
         // Base URL
@@ -30,6 +31,7 @@ foreach ($dbs as $d) {
     }
 }
 if (!$found) die("School database not found.");
+
 // Global constants
 define("SCHOOL_ROOT", $ROOT);
 define("SCHOOL_BASE", $BASE);

@@ -17,7 +17,7 @@ $school = $_SESSION['school_db'];
 
 $con = null;
 $ROOT = '';
-$BASE = '';   // 👈 base url
+$BASE = '';   // base url
 
 foreach ($dbs as $d) {
     if ($d['db'] === $school) {
@@ -26,10 +26,10 @@ foreach ($dbs as $d) {
         $con = new mysqli("localhost", $d['user'], $d['pass'], $d['db']);
 
         // Root path
-        $ROOT = '';
+        $ROOT = rtrim($d['root'] ?? '', '/');
 
         // Base URL
-        $BASE = '';
+        $BASE = rtrim($d['base'] ?? '', '/');
 
         break;
     }
@@ -45,11 +45,3 @@ define("SCHOOL_BASE", $BASE);
 
 // Optional helpers
 $software_direct = "../" . SCHOOL_ROOT;
-
-
-
-
-
-
-
-

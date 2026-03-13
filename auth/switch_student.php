@@ -18,7 +18,7 @@ $last_mobile = $_SESSION['last_mobile'] ?? $_COOKIE['last_mobile'] ?? '';
 </head>
 <body>
 
-<form id="autoForm" method="post" action="check_student.php">
+<form id="autoForm" method="post" action="/StudentAppDatalaysSoftware/auth/check_student.php">
   <input type="hidden" name="school_db" value="<?= htmlspecialchars($school) ?>">
   <input type="hidden" name="mobile" value="<?= htmlspecialchars($last_mobile) ?>">
 </form>
